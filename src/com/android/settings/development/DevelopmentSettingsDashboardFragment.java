@@ -468,14 +468,9 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
         controllers.add(new LogPersistPreferenceController(context, fragment, lifecycle));
         controllers.add(new CameraLaserSensorPreferenceController(context));
         controllers.add(new WifiDisplayCertificationPreferenceController(context));
-        controllers.add(new WifiCoverageExtendPreferenceController(context));
-        controllers.add(new SoftApOcvPreferenceController(context));
-        controllers.add(new SoftApBeaconProtectionPreferenceController(context));
         controllers.add(new WifiVerboseLoggingPreferenceController(context));
         controllers.add(new WifiScanThrottlingPreferenceController(context));
         controllers.add(new WifiEnhancedMacRandomizationPreferenceController(context));
-        controllers.add(new WifiWhitelistRoamingPreferenceController(context));
-        controllers.add(new WifiNewNetworkAutoConnectionPreferenceController(context));
         controllers.add(new MobileDataAlwaysOnPreferenceController(context));
         controllers.add(new TetheringHardwareAccelPreferenceController(context));
         controllers.add(new BluetoothDeviceNoNamePreferenceController(context));
@@ -485,7 +480,6 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
         controllers.add(new BluetoothMapVersionPreferenceController(context));
         controllers.add(new BluetoothA2dpHwOffloadPreferenceController(context, fragment));
         controllers.add(new BluetoothMaxConnectedAudioDevicesPreferenceController(context));
-        controllers.add(new EnhancedConnectivityPreferenceController(context));
         controllers.add(new ShowTapsPreferenceController(context));
         controllers.add(new PointerLocationPreferenceController(context));
         controllers.add(new ShowSurfaceUpdatesPreferenceController(context));
@@ -569,7 +563,6 @@ public class DevelopmentSettingsDashboardFragment extends RestrictedDashboardFra
 
     @Override
     public void onBluetoothHDAudioEnabled(boolean enabled) {
-        Log.d(TAG, "onBluetoothHDAudioEnabled: " + enabled);
         for (AbstractPreferenceController controller : mPreferenceControllers) {
             if (controller instanceof AbstractBluetoothDialogPreferenceController) {
                 ((AbstractBluetoothDialogPreferenceController) controller).onHDAudioEnabled(
